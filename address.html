@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Same</title>
+</head>
+<body>
+  
+
+  <label for="textField1"></label>
+  <input type="text" id="textField1" oninput="syncTextFields()">
+
+  <br>
+
+  <label for="syncCheckbox"></label>
+  <input type="checkbox" id="syncCheckbox" onclick="syncTextFields()">Mailing Address and Billing Address is same:
+
+  <br>
+
+  <label for="textField2"></label>
+  <input type="text" id="textField2" oninput="syncTextFields()" disabled>
+
+  <script>
+    function syncTextFields() {
+      var textField1 = document.getElementById('textField1');
+      var textField2 = document.getElementById('textField2');
+      var syncCheckbox = document.getElementById('syncCheckbox');
+
+      if (syncCheckbox.checked) {
+        textField2.value = textField1.value;
+        textField2.disabled = true;
+      } else {
+        textField2.value = "";
+        textField2.disabled = false;
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>
